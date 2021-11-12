@@ -157,13 +157,10 @@ void MainWindow::openClicked()
     qDebug() << "open clicked  " << fileName;
     QProcess *process = new QProcess();
     process->start(fileName);
-    //QProcess::execute(fileName);
     QDir *dir = new QDir("/proc");
     QStringList list;
     QStringList temp_list;
     QString temp;
-    QString vms;
-    QString rss;
     temp.clear();
     list = dir->entryList(QStringList("*"), QDir::AllDirs);
     temp_list = fileName.split('/');
@@ -176,11 +173,9 @@ void MainWindow::openClicked()
                 qDebug() << "PROCESS ERROR!" << "Unable to open entry";
             temp = file.readAll();
             temp.chop(1);
-            //qDebug() << temp << fileName;
             if(temp == fileName)
             {
                 procPID = str;
-                //qDebug() << procPID << fileName << path;
             }
 
         }

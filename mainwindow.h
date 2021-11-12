@@ -73,7 +73,6 @@ public slots:
     void openClicked();
     void update();
     void kill();
-    void testClicked();
 
 };
 #endif // MAINWINDOW_H
